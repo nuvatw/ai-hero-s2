@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>第二屆《AI 英雄之旅》｜15 天 n8n 線上戰鬥營</title>
+    <meta
+      name="description"
+      content="把重複的事交給自動化，把時間交還給你。零基礎，15 晩從 0 到上線，帶走 4 條企業級流程與一份《影響力報告書》（我們代撰）。"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+      <div class="container nav__bar">
+        <a class="nav__brand" href="#">
+          <img src="./assets/images/logo.png" alt="NOVA / nuvaCampus" />
+          <span>AI 英雄之旅｜n8n 線上戰鬥營</span>
+        </a>
+
+        <div class="nav__links">
+          <a class="nav__link" href="#outcomes">你會完成什麼</a>
+          <a class="nav__link" href="#schedule">課程時間軸</a>
+          <a class="nav__link" href="#pricing">方案與收費</a>
+          <a class="btn cta-apply" href="https://tally.so/r/meWY5k" target="_blank" rel="noopener">立即報名</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== Reminder Bar (自動於實體日前 7 天顯示) ===== -->
+    <div
+      id="reminder"
+      class="reminder hidden"
+      data-event="2025-12-06T09:30:00+08:00"
+    >
+      <div class="container reminder__wrap">
+        <span>實體日將至：請自備 <b>筆電 / 充電器 / 延長線</b>（12/06 台北松山・植境）</span>
+        <button class="reminder__close" aria-label="close">✕</button>
+      </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="container center">
+        <div class="badge">第二屆《AI 英雄之旅》・n8n 線上戰鬥營</div>
+
+        <h1>15 天從 0 到上線：把重複的事交給自動化，把時間交還給你</h1>
+
+        <p class="sub">
+          零基礎、15 晩每天 60 分鐘完成 <b>4 條企業級流程</b>，最後帶走我們代撰的
+          <b>《影響力報告書》</b>，對內匯報更有說服力。
+        </p>
+
+        <!-- 日程重點 -->
+        <div class="hero-points">
+          <ul>
+            <li><b>開幕式</b>：11/19（GMT+8）</li>
+            <li><b>線上課</b>：11/20–12/04｜每日 21:00–22:00（GMT+8）</li>
+            <li><b>預留/補課日</b>：12/05</li>
+            <li><b>實體成果發表</b>：12/06 台北松山・植境（09:30–19:00）</li>
+            <li><b>交流大會</b>：12/06 17:00–19:00｜松山車站・莫爾義式餐廳</li>
+          </ul>
+        </div>
+
+        <!-- 報名現況 + 倒數 -->
+        <div
+          id="seats"
+          class="seats"
+          data-total="60"
+          data-enrolled="0"
+          data-param="enrolled"
+        >
+          <div class="seats__row">
+            <span class="seats__text">只收 60 人｜目前已報名：</span>
+            <span class="seats__count"><b id="enrolledCount">0</b>/<span id="totalCount">60</span></span>
+          </div>
+          <div class="seats__bar" aria-hidden="true">
+            <div class="seats__fill" id="seatsFill" style="width:0%"></div>
+          </div>
+          <div
+            id="countdown"
+            class="countdown"
+            data-target="2025-11-19T21:00:00+08:00"
+          >
+            倒數至 11/19 開幕式：<span class="dd">--</span>天 <span class="hh">--</span>時
+            <span class="mm">--</span>分 <span class="ss">--</span>秒
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn cta-apply" href="https://tally.so/r/meWY5k" target="_blank" rel="noopener">立即報名</a>
+          <a class="btn btn--ghost" href="#pricing">企業/團報（5 人以上）聯繫我們</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== 你將在 15 天完成什麼 ===== -->
+    <section id="outcomes" class="section">
+      <div class="container">
+        <h2>你將在 15 天完成什麼</h2>
+        <p class="section-sub">
+          四大可上線專案（新手友善、附模板）＋明確可見的時間節省與成果輸出
+        </p>
+
+        <div class="projects grid-2">
+          <div class="card">
+            <h3>1. 發票／內帳自動化</h3>
+            <p>自動彙整發票與交易資料到 Sheet/內帳系統，例外即時提醒</p>
+            <ul>
+              <li><b>產出</b>：n8n 流程、彙整報表、日/週對帳腳本</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>2. 市場情報雷達（Research & Trend）</h3>
+            <p>監測站點/關鍵字/RSS → 去重分類 → AI 摘要 → 每週 Digest 寄送</p>
+            <ul>
+              <li><b>產出</b>：監測工作流、Notion/Sheet 資料庫、週報模板</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>3. 行程特助（Calendar + Gmail）</h3>
+            <p>一句話新增行程、收合 Gmail 新信重點、08:30 發每日簡報</p>
+            <ul>
+              <li><b>產出</b>：NL 指令 → 行程/郵件流程、每日 Brief 模板</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>4. 品牌客服小編（LINE + ChatGPT）</h3>
+            <p>把 ChatGPT 串到 LINE 上面，讓它回答客人的常見問題（FAQ），必要時交接人工</p>
+            <ul>
+              <li><b>產出</b>：LINE Bot ＋ n8n 流程、FAQ 知識庫（Sheet/Notion）、交接與監控腳本</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 依你的指示：移除下方三張小卡（每週省 ≥ 5 小時 / 4 條企業級流程 / 影響力報告書） -->
+      </div>
+    </section>
+
+    <!-- ===== 為什麼選 n8n ===== -->
+    <section id="why-n8n" class="section">
+      <div class="container">
+        <h2>為什麼選 n8n（零基礎也能做）</h2>
+        <div class="why-grid">
+          <div class="card">
+            <h3>積木拖拉，不用寫程式</h3>
+            <p>把各雲端服務自動串在一起，快速搭建業務流程</p>
+          </div>
+          <div class="card">
+            <h3>手把手一步到位</h3>
+            <p>從環境安裝、Webhook、API 到錯誤處理、監控，全部帶你做出來</p>
+          </div>
+          <div class="card card--full">
+            <h3>你只要願意實作</h3>
+            <p>會用電腦＋願意動手，其餘交給我們</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 前後對照 ===== -->
+    <section id="beforeafter" class="apply">
+      <div class="container">
+        <h2>前後對照（Before / After）</h2>
+        <div class="ba grid-2">
+          <div class="card">
+            <h3>Before</h3>
+            <p>手動對帳、四處找資料、安排行程耗時、成效說不清</p>
+          </div>
+          <div class="card">
+            <h3>After</h3>
+            <p>自動彙整＋異常提醒、情報 Digest、口述加行程、<b>有數據的一頁報告</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 課程時間軸（中線一顆可滑的球） ===== -->
+    <section id="schedule" class="faq">
+      <div class="container">
+        <h2>課程時間軸（每日 21:00–22:00）</h2>
+
+        <!-- data-current：載入時自動置中哪一天；可用網址 ?day=N 覆寫 -->
+        <div class="tl" id="timeline" data-current="1">
+          <div class="tl__ball" aria-hidden="true"></div>
+
+          <!-- 課前準備（不算 DAY） -->
+          <article class="tl__item tl__item--prep">
+            <div class="tl__card card">
+              <div class="tl__meta">課前準備｜上課前一週・行前影片</div>
+              <h3 class="tl__title">工具帳號先就緒 開課直接實作不卡關</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>第一天就能直接開始</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>完成三件事 1 開好 Google（Gmail Calendar Sheets 並建一張測試 Sheet 與表單） 2 註冊 n8n（雲端或本機 跑通 Hello Flow） 3 申請 LINE Developers（建立 Provider 與 Channel Day10 會用）</p>
+            </div>
+          </article>
+
+          <!-- Day 1 -->
+          <article class="tl__item" data-day="1">
+            <span class="tl__day">DAY 1</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">把資料自動進表單與表格（專案 #1 起手式）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>再也不用手動 Key 表單的資料 讓自動化幫你複製複製貼上貼上</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>製作表單與 Google Sheet 的夢幻聯動自動化流程</p>
+            </div>
+          </article>
+
+          <!-- Day 2 -->
+          <article class="tl__item" data-day="2">
+            <span class="tl__day">DAY 2</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">AI 自動分類與例外標記（專案 #1）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>讓 AI 判斷這筆是什麼類別 有沒有異常 月底對帳不再頭痛</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>在 n8n 串 表單 → AI 分類與檢查 → 回寫 Sheet 設定金額與關鍵字的例外條件</p>
+            </div>
+          </article>
+
+          <!-- Day 3 -->
+          <article class="tl__item" data-day="3">
+            <span class="tl__day">DAY 3</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">把自然語句變成可用的 JSON（專案 #1）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>學會把我昨天星巴克 120 元刷卡 變成結構化欄位 讓工具接得起來</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>練習三句話 轉 JSON 範本 用 Apps Script 或 n8n 把欄位寫入指定 Sheet 欄位</p>
+            </div>
+          </article>
+
+          <!-- Day 4 -->
+          <article class="tl__item" data-day="4">
+            <span class="tl__day">DAY 4</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">日週對帳與彙整報表（專案 #1 完成）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>一眼看懂錢花哪 哪裡怪 每天 1 分鐘掌握財務</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>做分類彙整頁 設定對帳鍵（日期加金額） 排程寄出例外提醒 Email</p>
+            </div>
+          </article>
+
+          <!-- Day 5 -->
+          <article class="tl__item" data-day="5">
+            <span class="tl__day">DAY 5</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">把網路資訊收進你的情報庫（專案 #2 起手式）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>不用逛十個網站 重要資訊自己送上門</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>設定 2–3 個來源（網站 RSS 關鍵字） 去重 初步分類 AI 三句摘要 存進 Notion 或 Sheet</p>
+            </div>
+          </article>
+
+          <!-- Day 6 -->
+          <article class="tl__item" data-day="6">
+            <span class="tl__day">DAY 6</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">一鍵產出每週 Digest（專案 #2 完成）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>三分鐘讓老闆與同事看懂本週重點 你少打一封週報</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>用週報模板自動排版（標題 五句精華 Top 連結）並設定每週排程寄送</p>
+            </div>
+          </article>
+
+          <!-- Day 7 -->
+          <article class="tl__item" data-day="7">
+            <span class="tl__day">DAY 7</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">期中實作</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>把專案一與二的核心一次做完也說得清楚</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>30 分鐘實作小任務 助教給具體回饋</p>
+            </div>
+          </article>
+
+          <!-- Day 8 -->
+          <article class="tl__item" data-day="8">
+            <span class="tl__day">DAY 8</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">一句話新增 Google 日曆（專案 #3 起手式）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>用自然語句就能建行程 不再怕漏</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>週五 3 點和王小明咖啡 30 分 → 解析日期與時長與地點 → 自動建立行程（含提醒）</p>
+            </div>
+          </article>
+
+          <!-- Day 9 -->
+          <article class="tl__item" data-day="9">
+            <span class="tl__day">DAY 9</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">Gmail 摘要＋每日 08:30 會報（專案 #3 完成）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>起床就收到今天行程與三件最重要的事</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>抓今日新信 用 AI 摘要重點 合併今日行程與待辦 08:30 自動寄出 Daily Brief</p>
+            </div>
+          </article>
+
+          <!-- Day 10 -->
+          <article class="tl__item" data-day="10">
+            <span class="tl__day">DAY 10</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">把 LINE 接上會回答的客服（專案 #4 完成）</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>讓客人 24/7 都能得到一致即時的回覆</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>申請 LINE Bot 串接 n8n 或後端 建立品牌知識庫（FAQ 價格 門市 退換貨） 用 ChatGPT 回答三到五個核心 FAQ</p>
+            </div>
+          </article>
+
+          <!-- Day 11 -->
+          <article class="tl__item" data-day="11">
+            <span class="tl__day">DAY 11</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">畢業專題：選題與規劃</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>做一個你自己真的會用的 MVP</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>寫一句話成果目標與自動化目標與流程草圖 動手完成第一版可跑流程</p>
+            </div>
+          </article>
+
+          <!-- Day 12 -->
+          <article class="tl__item" data-day="12">
+            <span class="tl__day">DAY 12</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">畢業專題：實作</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>把畢業專題做到 80%</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>把畢業專題從規劃一路開始執行</p>
+            </div>
+          </article>
+
+          <!-- Day 13 -->
+          <article class="tl__item" data-day="13">
+            <span class="tl__day">DAY 13</span>
+            <div class="tl__card card">
+              <h3 class="tl__title">畢業專題：最終確認</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>最終確認畢業專題 上哲全天皆在線上</p>
+              <h4 class="tl__label">小挑戰</h4>
+              <p>專題用 5–10 筆真資料測試與修正 並完成三張 A4 Demo 海報</p>
+            </div>
+          </article>
+
+          <!-- 實體日 -->
+          <article class="tl__item tl__item--event">
+            <div class="tl__card card">
+              <div class="tl__meta">11/30 台北松山</div>
+              <h3 class="tl__title">實體成果發表與交流大會</h3>
+              <h4 class="tl__label">目標</h4>
+              <p>成為本屆的冠軍</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 教學體驗與支援 ===== -->
+    <section id="support" class="apply">
+      <div class="container">
+        <h2>教學體驗與支援</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>直播＋即刻實作</h3>
+            <p>每晚 60 分鐘 跟著做就會</p>
+          </div>
+          <div class="card">
+            <h3>作業回饋</h3>
+            <p>依方案提供講評與具體建議</p>
+          </div>
+          <div class="card">
+            <h3>社群與素材</h3>
+            <p>加入 NOVA 校友 Discord 講義流程圖範例與 FAQ 皆提供</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 適合與不適合 + Persona ===== -->
+    <section id="audience" class="section">
+      <div class="container">
+        <h2>誰適合｜誰不適合</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>我們為誰打造</h3>
+            <ul>
+              <li><b>品牌主／行銷/電商負責人</b>：把內帳 情報 排程自動化</li>
+              <li><b>自由接案者</b>：用自動化擴大產能 提高客單價</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>不適合</h3>
+            <ul>
+              <li>只想聽理論 不願實作</li>
+              <li>完全不熟電腦環境 無法依指引完成安裝與基本操作</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="personas grid-2 margin-top-12">
+          <div class="card">
+            <h3>Persona A｜品牌主 Lisa（行銷經理）</h3>
+            <p><b>痛點</b>：內帳 Key 資料 每週報表 情報追不上</p>
+            <p><b>成功畫面</b>：每週省 5+ 小時 提交《影響力報告書》 拿到下一季預算</p>
+          </div>
+          <div class="card">
+            <h3>Persona B｜接案者 Jay（自動化新手）</h3>
+            <p><b>痛點</b>：全靠人力交付 沒標準化 報價難提升</p>
+            <p><b>成功畫面</b>：帶走 4 條可上線流程與作品集 接案更有底氣</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 成果發表與交流 ===== -->
+    <section id="event" class="apply">
+      <div class="container">
+        <h2>成果發表與交流</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>實體發表（12/06 台北松山・植境）</h3>
+            <p>09:30–19:00 現場備有投影與部分延長線 請自備筆電與充電器與延長線</p>
+          </div>
+          <div class="card">
+            <h3>評分與交流機制</h3>
+            <p>每位參與者現場 <b>2 票</b> 公開票選 17:00–19:00 交流大會（莫爾義式餐廳）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 影響力報告書 ===== -->
+    <section id="report" class="section">
+      <div class="container">
+        <h2>影響力報告書（由我們代撰）</h2>
+        <div class="grid-2">
+          <div class="card">
+            <ul>
+              <li><b>節省時數與人力的量化</b>（依實測估算）</li>
+              <li><b>錯誤率/回應速度</b> 前後對照</li>
+              <li><b>上線清單與維運建議</b>（監控 告警 備援）</li>
+              <li><b>下一步擴充地圖</b>（擴線 換資料源 權限/資安）</li>
+            </ul>
+          </div>
+          <div class="card">
+            <p>把你完成的流程轉成對內溝通的說服武器 一頁說清 ROI 爭取資源有依據</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 收費與方案（表格版） ===== -->
+    <section id="pricing" class="faq">
+      <div class="container">
+        <h2>收費與方案（新台幣）</h2>
+
+        <div class="pricing-table">
+          <table class="cmp" role="table" aria-label="方案比較表">
+            <thead>
+              <tr>
+                <th class="feature-col">功能 / 方案</th>
+                <th>
+                  <div class="tier">
+                    <div class="pill">Lemon</div>
+                    <div class="value">NT$ 22,000</div>
+                  </div>
+                </th>
+                <th>
+                  <div class="tier hot">
+                    <div class="pill pill--hot">Orange</div>
+                    <div class="plan__tag">最受歡迎</div>
+                    <div class="value">NT$ 25,000</div>
+                  </div>
+                </th>
+                <th>
+                  <div class="tier">
+                    <div class="pill">Peach</div>
+                    <div class="value">NT$ 48,000</div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th>企業級自動化專案 ×4</th>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <th>自選畢業專題 ×1</th>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <th>戰鬥營專屬學習群組</th>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <th>回放</th>
+                <td>一個月</td>
+                <td>六個月</td>
+                <td>一年</td>
+              </tr>
+              <tr>
+                <th>15 晚直播學習＋每日挑戰</th>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <th>畢業專題 上哲親自講評</th>
+                <td></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <th>1:1 線上諮詢 60 分鐘</th>
+                <td></td>
+                <td></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <th>一年內無限複訓</th>
+                <td></td>
+                <td></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <th>2026 年 NOVA 實體課「一折」參與權</th>
+                <td></td>
+                <td></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <th></th>
+                <td>
+                  <a class="btn w-full cta-apply" href="https://tally.so/r/meWY5k" target="_blank" rel="noopener">選擇 Lemon</a>
+                </td>
+                <td>
+                  <a class="btn w-full cta-apply" href="https://tally.so/r/meWY5k" target="_blank" rel="noopener">選擇 Orange</a>
+                </td>
+                <td>
+                  <a class="btn w-full cta-apply" href="https://tally.so/r/meWY5k" target="_blank" rel="noopener">選擇 Peach</a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="center margin-top-12">
+          <p><b>付款方式</b>：信用卡 / 轉帳</p>
+          <p>
+            <b>企業團報</b>：滿 <b>5 人</b> 以上，請
+            <a class="btn btn--ghost" href="#contact">聯繫我們</a>
+            取得團報方案與核銷協助
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 稀缺與社會證明 ===== -->
+    <section id="proof" class="apply">
+      <div class="container">
+        <h2>稀缺與社會證明</h2>
+
+        <div class="stats-inline">
+          <span class="pill">只招收 60 人</span>
+          <span>顯示目前報名進度與倒數 確保開跑不缺席</span>
+        </div>
+
+        <div class="grid-3 testimonials">
+          <div class="card">
+            <p>我把每週的內帳彙整自動化了 <b>每週省下 6 小時</b> 報告書讓主管第一次看懂 ROI</p>
+            <p class="muted">—— 品牌主（電商）Lisa / 行銷經理</p>
+          </div>
+          <div class="card">
+            <p>完成 4 條流程後 我把報價調高了 <b>20%</b> 溝通更有底氣</p>
+            <p class="muted">—— 自由接案者 Jay / MarTech</p>
+          </div>
+          <div class="card">
+            <p>情報雷達每天早上 8:30 出現在信箱 <b>決策速度變快</b> 團隊超買單</p>
+            <p class="muted">—— 內容營運 May / 內容部</p>
+          </div>
+        </div>
+
+        <div class="logos">
+          <span>[電商品牌A]</span>
+          <span>[B2B SaaS B]</span>
+          <span>[內容媒體C]</span>
+          <span>[教育機構D]</span>
+          <span>[代理商E]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2>常見問題 FAQ</h2>
+
+        <div class="accordion">
+          <details>
+            <summary>Q1：我完全沒基礎，跟得上嗎？</summary>
+            <div class="faq__content">可以 本營隊為新手設計 照著做即可完成 4 條可上線流程</div>
+          </details>
+
+        <div class="accordion">
+          <details>
+            <summary>Q2：有幾晚不能準時上線怎麼辦？</summary>
+            <div class="faq__content">提供回放（Lemon 1 個月 Orange 6 個月 Peach 一年內無限複訓）</div>
+          </details>
+
+          <details>
+            <summary>Q3：需要會寫程式嗎？</summary>
+            <div class="faq__content">不需要 會用電腦 願意實作即可 我們提供範例與檢核表</div>
+          </details>
+
+          <details>
+            <summary>Q4：可以公司核銷嗎？</summary>
+            <div class="faq__content">可以 提供統一發票抬頭與統編等資訊 協助核銷</div>
+          </details>
+
+          <details>
+            <summary>Q5：我適合哪個方案？</summary>
+            <div class="faq__content">想快速完成交付選 <b>Orange</b> 需要客製與長期陪跑選 <b>Peach</b></div>
+          </details>
+
+          <details>
+            <summary>Q6：會用到哪些工具？</summary>
+            <div class="faq__content">以 <b>n8n</b> 為核心 常見串接含 Google（Gmail Calendar Sheets Drive）等 皆會示範設定</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 報名流程 ===== -->
+    <section id="process" class="apply">
+      <div class="container">
+        <h2>報名流程</h2>
+        <ol class="steps">
+          <li>線上填表 選擇方案</li>
+          <li>完成付款（信用卡 / 轉帳）</li>
+          <li>加入 Discord 下載教材 完成環境安裝指引</li>
+        </ol>
+
+        <div class="elig__cta">
+          <a class="btn btn--xl cta-apply" href="https://tally.so/r/meWY5k" target="_blank" rel="noopener">立即報名</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 覆蓋時間軸固定中線的底部遮罩（沿用） -->
+    <div class="footer-blocker" aria-hidden="true"></div>
+
+    <!-- ===== CONTACT（企業/團報） ===== -->
+    <section id="contact" class="faq">
+      <div class="container center">
+        <h2>企業/團報聯繫</h2>
+        <p>填表後我們將於 1–2 個工作天內回覆</p>
+        <a class="btn btn--xl" href="https://tally.so/r/meWY5k" target="_blank" rel="noopener">填寫團報表單</a>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="container">
+        © 2025 NOVA. All rights reserved。<br />
+        最終解釋權：主辦單位得視實際情況調整並公告。
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
